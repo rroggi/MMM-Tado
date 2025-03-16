@@ -45,7 +45,7 @@ Module.register("MMM-Tado", {
             tableWrapper.className = "tado-table small";
 
             home.zones.forEach(zone => {
-                if ((zone.name === "Wohnzimmer" || zone.name === "WiGa" || zone.name === "Warmwasser" ) || (zone.state.activityDataPoints.heatingPower.percentage === 0) ) {
+                if ((zone.name === "Wohnzimmer" || zone.name === "WiGa" || zone.name === "Warmwasser" ) || (zone.state.activityDataPoints.heatingPower.percentage > 0) ) {
                 let rowWrapper = document.createElement("tr");
 
                 if (zone.type === "HOT_WATER") {
