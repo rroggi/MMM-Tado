@@ -45,6 +45,7 @@ Module.register("MMM-Tado", {
             tableWrapper.className = "tado-table small";
 
             home.zones.forEach(zone => {
+                if (zone.name === “Wohnzimmer” || zone.name === “Warmwasser” ) {
                 let rowWrapper = document.createElement("tr");
 
                 if (zone.type === "HOT_WATER") {
@@ -214,7 +215,7 @@ Module.register("MMM-Tado", {
                 }
 
                 tableWrapper.appendChild(rowWrapper);
-            });
+        }});
 
             homeWrapper.appendChild(tableWrapper);
             wrapper.appendChild(homeWrapper);
